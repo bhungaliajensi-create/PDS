@@ -1,0 +1,80 @@
+# 1. if statement
+age = 20
+
+if age >= 18:
+    print("You are eligible to vote")
+
+
+# 2. if-else statement
+number = 10
+
+if number % 2 == 0:
+    print("Number is Even")
+else:
+    print("Number is Odd")
+
+
+# 3. elif statement
+marks = 75
+
+if marks >= 90:
+    print("Grade A+")
+elif marks >= 80:
+    print("Grade A")
+elif marks >= 70:
+    print("Grade B")
+elif marks >= 60:
+    print("Grade C")
+else:
+    print("Grade D")
+
+
+# 4. while loop
+print("\nWhile Loop:")
+i = 1
+
+while i <= 5:
+    print(i)
+    i += 1
+
+
+# 5. for loop
+print("\nFor Loop:")
+
+for i in range(1, 6):
+    print(i)
+
+
+# 6. Nested loop
+print("\nNested Loop:")
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        print(i, j)
+
+
+# 7. break statement
+print("\nBreak Statement:")
+
+for i in range(1, 6):
+    if i == 4:
+        break
+    print(i)
+
+
+# 8. continue statement
+print("\nContinue Statement:")
+
+for i in range(1, 6):
+    if i == 3:
+        continue
+    print(i)
+
+
+# 9. pass statement
+print("\nPass Statement:")
+
+for i in range(1, 6):
+    if i == 3:
+        pass
+    print(i)
