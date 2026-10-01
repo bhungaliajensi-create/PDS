@@ -1,0 +1,97 @@
+# 1. Text File - Write Operation
+
+file = open("sample.txt", "w")
+file.write("Hello Python\n")
+file.write("This is a text file.")
+file.close()
+
+print("Text file written successfully.")
+
+
+# 2. Text File - Read Operation
+
+file = open("sample.txt", "r")
+data = file.read()
+print("\nText File Content:")
+print(data)
+file.close()
+
+
+# 3. Text File - Append Operation
+
+file = open("sample.txt", "a")
+file.write("\nThis line is added using append.")
+file.close()
+
+print("\nData appended successfully.")
+
+
+# 4. CSV File - Write Operation
+
+import csv
+
+file = open("student.csv", "w", newline="")
+writer = csv.writer(file)
+
+writer.writerow(["Name", "Age", "Course"])
+writer.writerow(["Jensi", 20, "PDS"])
+writer.writerow(["Riya", 19, "Python"])
+
+file.close()
+
+print("\nCSV file written successfully.")
+
+
+# 5. CSV File - Read Operation
+
+file = open("student.csv", "r")
+reader = csv.reader(file)
+
+print("\nCSV File Content:")
+
+for row in reader:
+    print(row)
+
+file.close()
+
+
+# 6. CSV File - Append Operation
+
+file = open("student.csv", "a", newline="")
+writer = csv.writer(file)
+
+writer.writerow(["Meet", 20, "PDS"])
+
+file.close()
+
+print("\nCSV data appended successfully.")
+
+
+# 7. Binary File - Write Operation
+
+file = open("data.bin", "wb")
+data = b"Hello Binary File"
+file.write(data)
+file.close()
+
+print("\nBinary file written successfully.")
+
+
+# 8. Binary File - Read Operation
+
+file = open("data.bin", "rb")
+data = file.read()
+
+print("\nBinary File Content:")
+print(data)
+
+file.close()
+
+
+# 9. Binary File - Append Operation
+
+file = open("data.bin", "ab")
+file.write(b"\nNew Binary Data")
+file.close()
+
+print("\nBinary data appended successfully.")
