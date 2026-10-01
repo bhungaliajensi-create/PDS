@@ -1,0 +1,52 @@
+import statistics
+
+# Given Dataset
+data = [10, 20, 20, 30, 40, 50, 60, 70, 80]
+
+print("Dataset:", data)
+
+# Mean
+mean = statistics.mean(data)
+print("Mean:", mean)
+
+# Median
+median = statistics.median(data)
+print("Median:", median)
+
+# Mode
+mode = statistics.mode(data)
+print("Mode:", mode)
+
+# Variance
+variance = statistics.variance(data)
+print("Variance:", variance)
+
+# Standard Deviation
+std_dev = statistics.stdev(data)
+print("Standard Deviation:", std_dev)
+
+# Range
+data_range = max(data) - min(data)
+print("Range:", data_range)
+
+# Quartiles
+q1, q2, q3 = statistics.quantiles(data, n=4)
+
+print("Q1:", q1)
+print("Q2:", q2)
+print("Q3:", q3)
+
+# Interquartile Range
+iqr = q3 - q1
+print("IQR:", iqr)
+
+
+# Interpretation
+print("\nInterpretation:")
+print("Mean represents the average value.")
+print("Median represents the middle value.")
+print("Mode represents the most frequently occurring value.")
+print("Variance and Standard Deviation represent data spread.")
+print("Range represents the difference between maximum and minimum.")
+print("Q1, Q2 and Q3 divide the data into four parts.")
+print("IQR represents the spread of the middle 50% of data.")
