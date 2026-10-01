@@ -1,0 +1,64 @@
+# 1. Function without arguments
+def greet():
+    print("Hello, Welcome to Python")
+
+greet()
+
+
+# 2. Function with positional arguments
+def add(a, b):
+    print("Addition:", a + b)
+
+add(10, 20)
+
+
+# 3. Function with keyword arguments
+def student(name, age):
+    print("Name:", name)
+    print("Age:", age)
+
+student(age=20, name="Jensi")
+
+
+# 4. Function with default argument
+def message(name="Student"):
+    print("Hello", name)
+
+message()
+message("Jensi")
+
+
+# 5. Function with variable number of arguments
+def total(*numbers):
+    print("Total:", sum(numbers))
+
+total(10, 20, 30, 40)
+
+
+# 6. Math module
+import math
+
+print("\nMath Module:")
+print("Square root:", math.sqrt(25))
+print("Power:", math.pow(2, 3))
+print("Factorial:", math.factorial(5))
+print("Value of Pi:", math.pi)
+
+
+# 7. Random module
+import random
+
+print("\nRandom Module:")
+print("Random number:", random.randint(1, 10))
+print("Random choice:", random.choice(["Apple", "Banana", "Mango"]))
+
+
+# 8. Statistics module
+import statistics
+
+numbers = [10, 20, 30, 40, 50]
+
+print("\nStatistics Module:")
+print("Mean:", statistics.mean(numbers))
+print("Median:", statistics.median(numbers))
+print("Mode:", statistics.mode([10, 20, 20, 30, 40]))
