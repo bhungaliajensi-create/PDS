@@ -1,0 +1,76 @@
+# Data Science Life Cycle and Data Analysis
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 1. Problem Definition
+
+print("Step 1: Problem Definition")
+print("Analyze student performance based on study hours, attendance and marks.")
+
+# 2. Data Collection
+
+data = {
+    "Study_Hours": [2, 3, 4, 5, 6, 7, 8, 4, 6, 9],
+    "Attendance": [65, 70, 75, 80, 85, 90, 95, 78, 88, 98],
+    "Marks": [45, 50, 55, 65, 70, 75, 85, 60, 78, 90]
+}
+
+df = pd.DataFrame(data)
+
+print("\nDataset:")
+print(df)
+
+# 3. Data Cleaning
+
+print("\nStep 3: Data Cleaning")
+print("Missing values:")
+print(df.isnull().sum())
+
+# 4. Univariate Analysis
+
+print("\nStep 4: Univariate Analysis")
+
+print("Study Hours Statistics:")
+print(df["Study_Hours"].describe())
+
+plt.hist(df["Marks"])
+plt.xlabel("Marks")
+plt.ylabel("Number of Students")
+plt.title("Distribution of Marks")
+plt.show()
+
+# 5. Bivariate Analysis
+
+print("\nStep 5: Bivariate Analysis")
+
+print("Correlation between Study Hours and Marks:")
+print(df["Study_Hours"].corr(df["Marks"]))
+
+plt.scatter(df["Study_Hours"], df["Marks"])
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.title("Study Hours vs Marks")
+plt.show()
+
+# 6. Multivariate Analysis
+
+print("\nStep 6: Multivariate Analysis")
+
+print("Correlation Matrix:")
+print(df.corr())
+
+sns.heatmap(df.corr(), annot=True)
+plt.title("Correlation Heatmap")
+plt.show()
+
+# 7. Interpretation
+
+print("\nStep 7: Interpretation")
+
+print("1. Univariate analysis studies one variable at a time.")
+print("2. Bivariate analysis studies the relationship between two variables.")
+print("3. Multivariate analysis studies relationships among multiple variables.")
+print("4. Study hours and attendance have a positive relationship with marks.")
+print("5. Data analysis helps in understanding student performance.")
