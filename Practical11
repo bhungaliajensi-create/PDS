@@ -1,0 +1,58 @@
+import pandas as pd
+
+# 1. Create a Series
+marks = pd.Series([80, 75, 90, 65, 85])
+
+print("Pandas Series:")
+print(marks)
+
+
+# 2. Create a DataFrame
+data = {
+    "Name": ["Jensi", "Riya", "Meet", "Amit", "Neha"],
+    "Age": [20, 19, 20, 21, 19],
+    "Marks": [85, 72, 90, 65, 80],
+    "Course": ["PDS", "PDS", "Python", "PDS", "Python"]
+}
+
+df = pd.DataFrame(data)
+
+print("\nDataFrame:")
+print(df)
+
+
+# 3. Data Selection
+print("\nSelect Name column:")
+print(df["Name"])
+
+print("\nSelect Name and Marks:")
+print(df[["Name", "Marks"]])
+
+print("\nFirst three rows:")
+print(df.head(3))
+
+
+# 4. Data Filtering
+print("\nStudents with Marks greater than 75:")
+print(df[df["Marks"] > 75])
+
+print("\nStudents studying PDS:")
+print(df[df["Course"] == "PDS"])
+
+
+# 5. Grouping
+print("\nGroup by Course:")
+group = df.groupby("Course")
+
+print(group["Marks"].mean())
+
+
+# 6. Aggregation
+print("\nAggregation:")
+
+print("Average Marks:", df["Marks"].mean())
+print("Maximum Marks:", df["Marks"].max())
+print("Minimum Marks:", df["Marks"].min())
+
+print("\nCourse-wise Statistics:")
+print(group["Marks"].agg(["mean", "max", "min", "count"]))
