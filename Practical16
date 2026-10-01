@@ -1,0 +1,55 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.stats import norm, expon
+
+# Normal Distribution 
+mean = 50
+std = 10
+
+x_normal = np.linspace(10, 90, 200)
+y_normal = norm.pdf(x_normal, mean, std)
+
+plt.figure(figsize=(8, 5))
+plt.plot(x_normal, y_normal)
+plt.xlabel("Value")
+plt.ylabel("Probability Density")
+plt.title("Normal Distribution")
+plt.grid()
+plt.show()
+
+# Exponential Distribution
+scale = 2
+
+x_exponential = np.linspace(0, 10, 200)
+y_exponential = expon.pdf(x_exponential, scale=scale)
+
+plt.figure(figsize=(8, 5))
+plt.plot(x_exponential, y_exponential)
+plt.xlabel("Value")
+plt.ylabel("Probability Density")
+plt.title("Exponential Distribution")
+plt.grid()
+plt.show()
+
+# Central Limit Theorem 
+np.random.seed(42)
+
+population = np.random.exponential(scale=2, size=10000)
+
+sample_means = []
+
+for i in range(1000):
+    sample = np.random.choice(population, size=30)
+    sample_means.append(np.mean(sample))
+
+plt.figure(figsize=(8, 5))
+plt.hist(sample_means, bins=30, density=True)
+plt.xlabel("Sample Mean")
+plt.ylabel("Frequency")
+plt.title("Central Limit Theorem")
+plt.grid()
+plt.show()
+
+print("Population Mean:", round(np.mean(population), 2))
+print("Mean of Sample Means:", round(np.mean(sample_means), 2))
+print("Standard Deviation of Sample Means:", round(np.std(sample_means), 2))
