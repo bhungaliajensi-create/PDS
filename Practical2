@@ -1,0 +1,74 @@
+# List
+fruits = ["Apple", "Banana", "Mango"]
+
+print("Original List:", fruits)
+
+fruits.append("Orange")
+print("After append:", fruits)
+
+fruits.insert(1, "Grapes")
+print("After insert:", fruits)
+
+fruits.remove("Banana")
+print("After remove:", fruits)
+
+fruits.sort()
+print("After sort:", fruits)
+
+fruits.reverse()
+print("After reverse:", fruits)
+
+
+# Tuple
+numbers = (10, 20, 30, 40, 20)
+
+print("\nTuple:", numbers)
+print("Count of 20:", numbers.count(20))
+print("Index of 30:", numbers.index(30))
+print("Length:", len(numbers))
+
+
+# Set
+colors = {"Red", "Blue", "Green"}
+
+print("\nOriginal Set:", colors)
+
+colors.add("Yellow")
+print("After add:", colors)
+
+colors.remove("Blue")
+print("After remove:", colors)
+
+colors.discard("Black")
+print("After discard:", colors)
+
+
+# Dictionary
+student = {
+    "Name": "Jensi",
+    "Age": 19,
+    "City": "Surat"
+}
+
+print("\nDictionary:", student)
+
+student["Age"] = 20
+student["Course"] = "PDS"
+
+print("Updated Dictionary:", student)
+print("Keys:", student.keys())
+print("Values:", student.values())
+print("Items:", student.items())
+
+
+# String
+text = "Python Programming"
+
+print("\nOriginal String:", text)
+print("Upper:", text.upper())
+print("Lower:", text.lower())
+print("Replace:", text.replace("Python", "Java"))
+print("Split:", text.split())
+print("Length:", len(text))
+print("Starts with Python:", text.startswith("Python"))
+print("Ends with ing:", text.endswith("ing"))
