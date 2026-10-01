@@ -1,0 +1,47 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = [1, 2, 3, 4, 5]
+y = [10, 25, 15, 30, 20]
+
+names = ["A", "B", "C", "D", "E"]
+marks = [80, 65, 90, 75, 85]
+
+data = [45, 55, 60, 60, 65, 70, 72, 75, 80, 85, 90, 95]
+
+subjects = ["Python", "Java", "CN", "DBMS"]
+values = [85, 75, 90, 80]
+
+scatter_x = [10, 20, 30, 40, 50]
+scatter_y = [15, 25, 35, 45, 55]
+
+fig, axes = plt.subplots(3, 2, figsize=(12, 12))
+
+axes[0, 0].plot(x, y, marker="o")
+axes[0, 0].set_title("Line Plot")
+axes[0, 0].set_xlabel("X")
+axes[0, 0].set_ylabel("Y")
+
+axes[0, 1].bar(names, marks)
+axes[0, 1].set_title("Bar Chart")
+axes[0, 1].set_xlabel("Students")
+axes[0, 1].set_ylabel("Marks")
+
+axes[1, 0].hist(data, bins=5)
+axes[1, 0].set_title("Histogram")
+axes[1, 0].set_xlabel("Marks")
+axes[1, 0].set_ylabel("Frequency")
+
+axes[1, 1].pie(values, labels=subjects, autopct="%1.1f%%")
+axes[1, 1].set_title("Pie Chart")
+
+axes[2, 0].scatter(scatter_x, scatter_y)
+axes[2, 0].set_title("Scatter Plot")
+axes[2, 0].set_xlabel("X")
+axes[2, 0].set_ylabel("Y")
+
+axes[2, 1].axis("off")
+
+fig.suptitle("Various Matplotlib Plots", fontsize=16)
+plt.tight_layout()
+plt.show()
